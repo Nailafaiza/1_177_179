@@ -110,3 +110,17 @@ string reviewPelanggan(){
     cout << "3. Kemungkinan memesan lagi (1-5): ";
     cin >> nilai3;
     float rata2 = (nilai1 + nilai2 + nilai3) / 3.0;
+
+//menggabungkan hasil review pelanggan dalam satu string
+    char hasil[100];
+    sprintf(hasil, "%d,%d,%d,%.2f", nilai1, nilai2, nilai3, rata2);
+    return string(hasil);
+     
+    // Menyimpan review ke file review.txt
+    FILE *f = fopen("review.txt", "a");
+    if (f == NULL){
+        return "Gagal membuka file!\n";
+    }
+    fprintf(f, "%d,%d,%d,Rata-rata: %.2f\n", nilai1, nilai2, nilai3, rata2);
+    fclose(f);
+}
