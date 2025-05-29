@@ -222,3 +222,29 @@ void cariPesananNama()
         }
         bantu = bantu->next;
     }    
+    if (!ditemukan)
+        cout << "Tidak ditemukan pesanan atas nama tersebut.\n";
+}
+
+// Fungsi untuk mencari pesanan berdasarkan nama makanan (sequential search)
+void cariPesananMakanan()
+{
+    string cari; // menyimpan input dari user saat ingin mencari pesanan berdasarkan nama makanan
+    cout << "\nMasukkan nama makanan yang dicari: ";
+    cin.ignore();
+    getline(cin, cari);
+    Pesanan *bantu = head;
+    bool ditemukan = false;
+    while (bantu != nullptr)
+    {
+        if (bantu->makanan == cari)
+        {
+            cout << "Ditemukan pesanan ID: " << bantu->id
+                 << " | Nama Pelanggan: " << bantu->namaPelanggan
+                 << " | Menu: " << bantu->makanan
+                 << " | Jumlah: " << bantu->jumlah
+                 << " | Estimasi: " << bantu->estimasiWaktu << " menit\n";
+            ditemukan = true;
+        }
+        bantu = bantu->next;
+    }
