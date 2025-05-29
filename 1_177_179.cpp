@@ -124,3 +124,24 @@ string reviewPelanggan(){
     fprintf(f, "%d,%d,%d,Rata-rata: %.2f\n", nilai1, nilai2, nilai3, rata2);
     fclose(f);
 }
+
+// Fungsi untuk memproses pesanan
+void prosesPesanan(){
+    if (head == nullptr){
+        cout << "\nAntrian kosong. Tidak ada pesanan untuk diproses."<<endl;
+        return;
+    }else{
+    Pesanan *hapus = head;
+    cout << "\nMemproses pesanan ID " << hapus->id << " - " << hapus->namaPelanggan << endl;
+    head = head->next;
+
+    string hasilReview = reviewPelanggan(); // Simpan hasil review pelanggan
+    simpanKeRiwayat(hapus, hasilReview); // Simpan pesanan yang sudah dilayani dan hasil review ke riwayat.txt sebelum dihapus
+
+    delete hapus;
+    if (head == nullptr)
+        tail = nullptr;
+
+    simpanKeFile(head);
+    }
+}
