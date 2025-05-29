@@ -248,3 +248,27 @@ void cariPesananMakanan()
         }
         bantu = bantu->next;
     }
+    if (!ditemukan)
+        cout << "Tidak ditemukan pesanan dengan nama makanan tersebut.\n";
+}
+
+int main()
+{
+    int pilihan;
+    do
+    {
+        cout << " ===============================================" << endl;
+        cout << "|    MENU SISTEM ANTRIAN PENGANTARAN MAKANAN    |" << endl;
+        cout << " ===============================================" << endl;
+        cout << "| [1]. Tambah Pesanan                           |" << endl;
+        cout << "| [2]. Proses Pesanan                           |" << endl;
+        cout << "| [3]. Tampilkan Antrian                        |" << endl;
+        cout << "| [4]. Cari Pesanan (Nama Pelanggan)            |" << endl;
+        cout << "| [5]. Cari Pesanan (Nama Makanan)              |" << endl;
+        cout << "| [6]. Urutkan Pesanan (Nama Makanan)           |" << endl;
+        cout << "| [7]. Tampilkan Riwayat Pesanan                |" << endl;
+        cout << "| [0]. Keluar                                   |" << endl;
+        cout << "=================================================" << endl;
+        cout << "Pilih menu: ";
+        cin >> pilihan;
+        switch (pilihan)
