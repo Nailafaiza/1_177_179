@@ -272,3 +272,36 @@ int main()
         cout << "Pilih menu: ";
         cin >> pilihan;
         switch (pilihan)
+        {
+        case 0:
+            cout << "\nTerima kasih telah menggunakan layanan kami.\n";
+            break;
+        case 1:
+            tambahPesanan();
+            break;
+        case 2:
+            prosesPesanan();
+            break;
+        case 3:
+            tampilkanAntrian();
+            break;
+        case 4:
+            cariPesananNama();
+            break;
+        case 5:
+            cariPesananMakanan();
+            break;
+        case 6:
+            urutkanPesanan();
+            cout << "\nPesanan berhasil diurutkan berdasarkan nama makanan!\n";
+            tampilkanAntrian();
+            break;
+        case 7:
+            tampilkanRiwayat();
+            break;
+        default:
+            cout << "\nPilihan tidak valid.\n";
+        }
+    } while (pilihan != 0);
+    return 0;
+}
