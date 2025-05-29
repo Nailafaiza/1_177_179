@@ -178,3 +178,12 @@ void urutkanPesanan(){
         }
     }
 }
+
+// Fungsi untuk menampilkan antrian pesanan
+void tampilkanAntrian()
+{
+    if (head == nullptr)
+    {
+        cout << "\nAntrian kosong.\n";
+        return;
+    }
