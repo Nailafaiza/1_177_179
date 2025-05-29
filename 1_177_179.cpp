@@ -199,3 +199,14 @@ void tampilkanAntrian()
         bantu = bantu->next;
     }
 }
+
+// Fungsi untuk mencari pesanan berdasarkan nama pelanggan (sequential search)
+void cariPesananNama()
+{
+    string cari; // menyimpan input dari user saat user ingin mencari pesanan berdasarkan nama pelanggan.
+    cout << "\nMasukkan nama pelanggan yang dicari: ";
+    cin.ignore();
+    getline(cin, cari);
+    Pesanan *bantu = head;
+    bool ditemukan = false;
+    while (bantu != nullptr)
