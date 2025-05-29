@@ -98,3 +98,15 @@ void tambahPesanan(){
     // Simpan ke file setelah menambah pesanan
     simpanKeFile(head); 
 }
+
+// Fungsi review pelanggan (dipanggil setelah proses pesanan)
+string reviewPelanggan(){
+    int nilai1, nilai2, nilai3;
+    cout << "\nReview Kepuasan Pelanggan:\n";
+    cout << "1. Makanan tiba tepat waktu (1-5): ";
+    cin >> nilai1;
+    cout << "2. Kualitas makanan (1-5): ";
+    cin >> nilai2;
+    cout << "3. Kemungkinan memesan lagi (1-5): ";
+    cin >> nilai3;
+    float rata2 = (nilai1 + nilai2 + nilai3) / 3.0;
