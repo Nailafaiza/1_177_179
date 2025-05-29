@@ -145,3 +145,36 @@ void prosesPesanan(){
     simpanKeFile(head);
     }
 }
+
+// Fungsi untuk mengurutkan pesanan berdasarkan nama makanan (bubble sort)
+void urutkanPesanan(){
+    if (head == nullptr || head->next == nullptr)
+        return;
+
+    Pesanan *i, *j;
+    for (i = head; i != nullptr; i = i->next){
+        for (j = i->next; j != nullptr; j = j->next){
+            if (i->makanan > j->makanan) {
+                // Tukar data pesanan
+                Pesanan temp;
+                temp.id = i->id;
+                temp.namaPelanggan = i->namaPelanggan;
+                temp.makanan = i->makanan;
+                temp.jumlah = i->jumlah;
+                temp.estimasiWaktu = i->estimasiWaktu;
+
+                 i->id = j->id;
+                i->namaPelanggan = j->namaPelanggan;
+                i->makanan = j->makanan;
+                i->jumlah = j->jumlah;
+                i->estimasiWaktu = j->estimasiWaktu;
+
+                j->id = temp.id;
+                j->namaPelanggan = temp.namaPelanggan;
+                j->makanan = temp.makanan;
+                j->jumlah = temp.jumlah;
+                j->estimasiWaktu = temp.estimasiWaktu;
+            }
+        }
+    }
+}
